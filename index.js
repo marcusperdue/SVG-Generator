@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const path = require('path'); // Add this line to require the 'path' module
 const { Triangle, Circle, Square } = require('./lib/shapes');
 
 inquirer
@@ -9,7 +10,6 @@ inquirer
       name: 'text',
       message: 'Enter up to three characters for the text:',
       validate: (input) => {
-        
         return input.length >= 1 && input.length <= 3 ? true : 'Please enter 1 to 3 characters.';
       },
     },
@@ -31,7 +31,6 @@ inquirer
     },
   ])
   .then((answers) => {
-   
     let selectedShape;
     switch (answers.shape) {
       case 'Circle':
@@ -48,19 +47,18 @@ inquirer
         return;
     }
 
-     
     selectedShape.setText(answers.text);
     selectedShape.setColor(answers.shapeColor);
 
-    
     const svgString = selectedShape.render();
 
-   
-    fs.writeFile('logo.svg', svgString, (err) => {
+    const filePath = path.join(__dirname, 'examples', 'logo.svg');
+
+    fs.writeFile(filePath, svgString, (err) => {
       if (err) {
         console.error('Error writing SVG file:', err);
       } else {
-        console.log('Generated logo.svg');
+        console.log('Generated logo.svg in the examples folder');
       }
     });
   })
