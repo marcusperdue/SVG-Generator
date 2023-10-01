@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const path = require('path'); // Add this line to require the 'path' module
+const path = require('path'); 
 const { Triangle, Circle, Square } = require('./lib/shapes');
 
 inquirer
@@ -52,13 +52,17 @@ inquirer
 
     const svgString = selectedShape.render();
 
-    const filePath = path.join(__dirname, 'examples', 'logo.svg');
+    // Generate a unique filename based on a timestamp
+    const timestamp = Date.now();
+    const fileName = `logo_${timestamp}.svg`;
+
+    const filePath = path.join(__dirname, 'examples', fileName);
 
     fs.writeFile(filePath, svgString, (err) => {
       if (err) {
         console.error('Error writing SVG file:', err);
       } else {
-        console.log('Generated logo.svg in the examples folder');
+        console.log(`Generated ${fileName} in the examples folder`);
       }
     });
   })
