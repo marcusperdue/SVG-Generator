@@ -48,6 +48,7 @@ inquirer
     }
 
     selectedShape.setText(answers.text);
+    selectedShape.setTextColor(answers.textColor);
     selectedShape.setColor(answers.shapeColor);
 
     const svgString = selectedShape.render();
