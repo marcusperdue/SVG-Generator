@@ -2,14 +2,12 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const port = 3000;  
 
-app.get('/logo.svg', (req, res) => {
-  const filePath = path.join(__dirname, 'logo.svg');
-  res.setHeader('Content-Type', 'image/svg+xml');  
-  res.sendFile(filePath);
-});
-
+// Serve static files from the 'lib' directory
+app.use(express.static(path.join(__dirname, 'examples')));
+app.use(express.static(path.join(__dirname, 'lib')));
+// Start the server
+const port = 3000;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

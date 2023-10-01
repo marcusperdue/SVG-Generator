@@ -52,7 +52,7 @@ inquirer
 
     const svgString = selectedShape.render();
 
-    // Generate a unique filename based on a timestamp
+ 
     const timestamp = Date.now();
     const fileName = `logo_${timestamp}.svg`;
 
