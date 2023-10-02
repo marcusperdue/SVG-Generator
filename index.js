@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path'); 
 const { Triangle, Circle, Square } = require('./lib/shapes');
 
+// Prompt the user for input
 inquirer
   .prompt([
     {
@@ -30,6 +31,8 @@ inquirer
       message: 'Enter the shape color (color keyword or hexadecimal number):',
     },
   ])
+
+// Create shape based on user input
   .then((answers) => {
     let selectedShape;
     switch (answers.shape) {
@@ -47,6 +50,7 @@ inquirer
         return;
     }
 
+// Set properties of the selected shape
     selectedShape.setText(answers.text);
     selectedShape.setTextColor(answers.textColor);
     selectedShape.setColor(answers.shapeColor);
@@ -59,6 +63,7 @@ inquirer
 
     const filePath = path.join(__dirname, 'examples', fileName);
 
+  // Write the SVG file to the specified path
     fs.writeFile(filePath, svgString, (err) => {
       if (err) {
         console.error('Error writing SVG file:', err);
