@@ -32,7 +32,7 @@ To install this project, follow these steps:
 
 1. Clone this ``` git clone https://github.com/marcusperdue/SVG-Generator.git``` 
 
-2. Run `npm install` to install the required dependencies.
+2. Run `npm install` & `npm install --save-dev jest`  to install the required dependencies.
 
 
 
