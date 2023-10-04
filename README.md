@@ -14,9 +14,9 @@
 
 Create a custom SVG logo with your choice of shape (circle, square, or triangle), color, and up to three characters of text. Customize the shape and text colors using keywords or hex codes for a unique, eye-catching brand identity.
 
-Watch a [video](https://drive.google.com/file/d/1GATZ7Irqv4chLnHs6-wi3L9SN4wdhAi_/view) demonstration of functionality:
+Watch a [video](https://drive.google.com/file/d/1Ezznbguzias7xMEpHgjLbsmqa3No_QMv/view) demonstration of functionality:
 
-https://drive.google.com/file/d/1GATZ7Irqv4chLnHs6-wi3L9SN4wdhAi_/view
+https://drive.google.com/file/d/1Ezznbguzias7xMEpHgjLbsmqa3No_QMv/view
 
 ## Table of Contents
 
